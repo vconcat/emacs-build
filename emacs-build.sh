@@ -88,7 +88,7 @@ function check_mingw_architecture ()
 
 function ensure_mingw_build_software ()
 {
-    local build_packages="zip unzip base-devel autoconf2.13 ${mingw_prefix}-toolchain"
+    local build_packages="zip unzip base-devel autoconf2.13 automake ${mingw_prefix}-toolchain"
     pacman -S --noconfirm --needed $build_packages >/dev/null 2>&1
     if test "$?" != 0; then
         echo Unable to install $build_packages
