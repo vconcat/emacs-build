@@ -417,6 +417,7 @@ while test -n "$*"; do
                 delete_feature cairo # We delete features here, so that user can repopulate them
                 delete_feature rsvg
                 delete_feature tiff
+		emacs_slim_build=yes
                 emacs_compress_files=yes
                 emacs_strip_executables=yes;;
         --strip) emacs_strip_executables=yes;;
@@ -457,7 +458,7 @@ while test -n "$*"; do
 done
 if test "$emacs_slim_build" = "yes"; then
     dependency_exclusions="$slim_exclusions"
-    emacs_compress_files=yes
+    # emacs_compress_files=yes
 fi
 if test -z "$emacs_branch"; then
     emacs_branch="emacs-27"
